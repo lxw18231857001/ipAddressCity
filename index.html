@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="http://ip.chinaz.com/getip.aspx"></script>
+
+<script src="jquery.min.js"></script> 
+
+ <meta charset="UTF-8">
+<script>
+
+$(function(){   
+    $.getJSON("getTaoIP.php",function(json){   
+        var myprovince2 = json.data.region;           
+        var mycity2 = json.data.city;   
+		console.log(json.data);
+        $("#city_2").html("您所在的城市是："+myprovince2+mycity2);   
+    });   
+}); 
+</script>
+
+
+<style>
+select {width:250px;}
+</style>
+</head>
+<body>
+<h3>调用淘宝IP库接口</h3>  
+<div id="city_2"> 
+   
+</div>  
+
+</body>
+</html>
+
